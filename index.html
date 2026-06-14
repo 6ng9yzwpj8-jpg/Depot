@@ -1,0 +1,103 @@
+ <!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Werners Depot</title>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background: #f4f6f9;
+}
+
+.card {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+}
+
+.gesamt {
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+canvas {
+    max-width: 100%;
+}
+</style>
+</head>
+
+<body>
+
+<h1>📈 Werners Depot</h1>
+
+<div class="card">
+    <div class="gesamt">
+        Gesamtwert: 102.065 €
+    </div>
+</div>
+
+<div class="card">
+<h2>💵 Geschätzte Jahresdividenden</h2>
+
+<ul>
+<li>Allianz: ca. 1.150 €</li>
+<li>Altria: ca. 2.600 €</li>
+<li>Deutsche Post: ca. 170 €</li>
+<li>Kraft Heinz: ca. 10 €</li>
+<li>Mondelez: ca. 30 €</li>
+<li>Vanguard High Dividend: ca. 230 €</li>
+</ul>
+
+<strong>Gesamt: ca. 4.190 €</strong>
+</div>
+
+<div class="card">
+<h2>🥧 Depotaufteilung</h2>
+
+<canvas id="depotChart"></canvas>
+</div>
+
+<script>
+new Chart(document.getElementById('depotChart'), {
+    type: 'pie',
+    data: {
+        labels: [
+            'Einzelaktien',
+            'ETFs',
+            'Fonds'
+        ],
+        datasets: [{
+            data: [
+                53500,
+                40600,
+                7950
+            ]
+        }]
+    }
+});
+</script>
+
+</body>
+</html>
